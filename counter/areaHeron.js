@@ -33,3 +33,4 @@ function calculateInWindow() {
 window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btnCalculate').addEventListener('click', calculateInWindow);
 });
+

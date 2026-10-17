@@ -12,17 +12,30 @@
         <h1></h1>
         <div class="counters">
             <section class="counter1">
-                <h2>Розрахувати площу трикутника за трьома сторонами за допомогою формули Герона</h2>
-                <div class="calculadora">
+                <h2>Розрахунок площі трикутника за допомогою формули Герона (за трьома сторонами)</h2>
+                <div class="counter">
                     <p>Введіть розміри трьох сторін трикутника</p>
                     <input type="number" id="sideA" placeholder="Side A">
                     <input type="number" id="sideB" placeholder="Side B">
                     <input type="number" id="sideC" placeholder="Side C">
-                    <button id="btnCalculate">порахувати</button>
+                    <button id="btnCalculate">Розрахувати площу</button>
                 </div>
-                <p>Результат: <span id="result"></span></p>
+                <h2>Результат: <span id="result"></span></h2>
             </section>
-            <section2></section2>
+            <section2>
+                    <h2>Розрахунок площі трикутника за двома сторонами і кутом між ними</h2>
+                    <div class="calculadora">
+                        <label for="sideA">Сторона A (см):</label>
+                        <input type="number" id="sideA" placeholder="Сторона A (см)"><br>
+                        <label for="sideB">Сторона B (см):</label>
+                        <input type="number" id="sideB" placeholder="Сторона B (см)"><br>
+                        <label for="angle">Кут між ними (градуси °):</label>
+                        <input type="number" id="angle" placeholder="Кут між ними (градуси °)"><br>
+                        <button id="btnCalculate">Розрахувати площу</button>
+                    </div>
+                    <h2>Результат: <span id="result"></span> см²</h2>
+            </section2>
+
         </div>
     </div>
 </body>
