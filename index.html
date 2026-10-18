@@ -9,27 +9,35 @@
     <script src="./counter/areaTriangle.js" defer></script>
     <script src="./counter/areaSideHight.js" defer></script>
     <script src="./counter/areaThreeCircumradius.js" defer></script>
-    <script src="./counter/resetCurrentBlock.js" defer></script>
 
-    <link rel="stylesheet" href="./style/header.css">
-    <link rel="stylesheet" href="./style/container.css" />
+    <script src="./counter/resetCurrentBlock.js" defer></script>
+    <script src="./counter/navigation.js" defer></script>
+
+    <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
-    <!-- MENU  -->
-    <header class="main-header">
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="#heron-section">За трьома сторонами (Герон)</a></li>
-          <li><a href="#side-angle-section">За двома сторонами і кутом</a></li>
-          <li><a href="#base-height-section">За стороною і висотою</a></li>
-          <li><a href="#circumradius-section">За радіусом описаного кола</a></li>
-          <li><a href="#"></a></li>
+    <nav class="sidebar-nav">
+      <div class="menu-category-group">
+        <div class="nav-category" id="trigger-geometry">Геометрія</div>
+        <ul class="menu-items" id="items-geometry">
+          <li><a href="#heron-section">1. Формула Герона</a></li>
+          <li><a href="#side-angle-section">2. Дві сторони і кут</a></li>
+          <li><a href="#base-height-section">3. Сторона і висота</a></li>
+          <li><a href="#circumradius-section">4. Описане коло (R)</a></li>
         </ul>
-      </nav>
-    </header>
+      </div>
+      <div class="menu-category-group">
+        <div class="nav-category" id="trigger-logic">Логічні завдання</div>
+        <ul class="menu-items" id="items-logic">
+          <li><a href="#palindrome-section">5. Паліндроми</a></li>
+          <li><a href="#anagram-section">6. Анаграми</a></li>
+          <li><a href="#fibonacci-section">7. Фібоначчі</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <div class="container">
-      <h1>Онлайн калькулятор</h1>
       <div class="counters">
         <!-- 1. FORMULA DE HERON -->
         <section id="heron-section" class="block">
@@ -92,7 +100,7 @@
         </section>
         <!-- 4.  -->
         <section id="circumradius-section" class="block">
-          <h2>Розрахунок площі трикутника за трьома сторонами <br>і радіусом описаного кола</h2>
+          <h2>Розрахунок площі трикутника за трьома сторонами <br />і радіусом описаного кола</h2>
 
           <div class="input-group">
             <label for="sideAR">Сторона A (см):</label>
@@ -115,6 +123,18 @@
           <button class="btn-reset">Новий розрахунок</button>
 
           <h3>Результат: <span id="resultCircumradius"></span></h3>
+        </section>
+        <!-- 5. ПАЛІНДРОМ -->
+        <section id="palindrome-section" class="block">
+          <h2>Перевірка рядка на паліндром (слово-перевертень)</h2>
+          <div class="input-group">
+            <label for="palindromeInput">Введіть слово або фразу:</label>
+            <!-- Usamos type="text" porque agora vamos trabalhar com texto -->
+            <input type="text" id="palindromeInput" placeholder="Наприклад: радар або дід" />
+          </div>
+          <button id="btnCheckPalindrome">Перевірити</button>
+          <h3>Результат: <span id="resultPalindrome"></span></h3>
+          <button class="btn-reset">Новий розрахунок</button>
         </section>
       </div>
     </div>
