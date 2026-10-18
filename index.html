@@ -7,6 +7,7 @@
     <script src="./counter/areaHeron.js" defer></script>
     <script src="./counter/areaTriangle.js" defer></script>
     <script src="./counter/areaSideHight.js" defer></script>
+    <script src="./counter/resetCurrentBlock.js"></script>
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
@@ -40,7 +41,8 @@
             <input type="number" id="sideC" step="any" placeholder="Введіть сторону C" />
           </div>
           <button id="btnCalculate">Розрахувати</button>
-          <h3>Результат: <span id="result"></span> см²</h3>
+          <h3>Результат: <span id="result"></span></h3>
+          <button  class="btn-reset" id="resetCurrentBlock">Новий розрахунок</button>
         </section>
 
         <!-- 2 TWO SIDE & ANGLE  -->
@@ -61,7 +63,8 @@
             </div>
             <button id="btnCalculateTriangle">Розрахувати площу</button>
           </div>
-          <h3>Результат: <span id="resultTriangle"></span> см²</h3>
+          <h3>Результат: <span id="resultTriangle"></span></h3>
+          <button  class="btn-reset" id="resetCurrentBlock">Новий розрахунок</button>
         </section>
 
         <!-- 3. BASE E HEIGHT -->
@@ -78,7 +81,8 @@
             </div>
             <button id="btnCalculateBaseHeight">Розрахувати площу</button>
           </div>
-          <h3>Результат: <span id="resultBaseHeight"></span> см²</h3>
+          <h3>Результат: <span id="resultBaseHeight"></span></h3>
+          <button  class="btn-reset" id="resetCurrentBlock">Новий розрахунок</button>
         </section>
       </div>
     </div>
