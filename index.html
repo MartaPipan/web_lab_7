@@ -1,42 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COUNTER</title>
     <script src="./counter/areaHeron.js" defer></script>
-    <script src="./counter.js"></script>
-</head>
-<body>
-    <div class="container">
-        <h1></h1>
-        <div class="counters">
-            <section class="counter1">
-                <h2>Розрахунок площі трикутника за допомогою формули Герона (за трьома сторонами)</h2>
-                <div class="counter">
-                    <p>Введіть розміри трьох сторін трикутника</p>
-                    <input type="number" id="sideA" placeholder="Side A">
-                    <input type="number" id="sideB" placeholder="Side B">
-                    <input type="number" id="sideC" placeholder="Side C">
-                    <button id="btnCalculate">Розрахувати площу</button>
-                </div>
-                <h2>Результат: <span id="result"></span></h2>
-            </section>
-            <section2>
-                    <h2>Розрахунок площі трикутника за двома сторонами і кутом між ними</h2>
-                    <div class="calculadora">
-                        <label for="sideA">Сторона A (см):</label>
-                        <input type="number" id="sideA" placeholder="Сторона A (см)"><br>
-                        <label for="sideB">Сторона B (см):</label>
-                        <input type="number" id="sideB" placeholder="Сторона B (см)"><br>
-                        <label for="angle">Кут між ними (градуси °):</label>
-                        <input type="number" id="angle" placeholder="Кут між ними (градуси °)"><br>
-                        <button id="btnCalculate">Розрахувати площу</button>
-                    </div>
-                    <h2>Результат: <span id="result"></span> см²</h2>
-            </section2>
+    <script src="./counter/areaTriangle.js" defer></script>
+    <script src="./counter/areaSideHight.js" defer></script>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <!-- HEADER COM MENU DE NAVEGAÇÃO -->
+    <header class="main-header">
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#heron-section">За трьома сторонами (Герон)</a></li>
+          <li><a href="#side-angle-section">За двома сторонами і кутом</a></li>
+          <li><a href="#base-height-section">За стороною і висотою</a></li>
+        </ul>
+      </nav>
+    </header>
 
-        </div>
+    <div class="container">
+      <h1>Онлайн калькулятор</h1>
+      <div class="counters">
+        <!-- 1. FORMULA DE HERON -->
+        <section id="heron-section" class="block">
+          <h2>Розрахунок площі трикутника за допомогою формули Герона <br />(за трьома сторонами)</h2>
+          <div class="input-group">
+            <label for="sideA">Сторона A (см):</label>
+            <input type="number" id="sideA" step="any" placeholder="Введіть сторону A" />
+          </div>
+          <div class="input-group">
+            <label for="sideB">Сторона B (см):</label>
+            <input type="number" id="sideB" step="any" placeholder="Введіть сторону B" />
+          </div>
+          <div class="input-group">
+            <label for="sideC">Сторона C (см):</label>
+            <input type="number" id="sideC" step="any" placeholder="Введіть сторону C" />
+          </div>
+          <button id="btnCalculate">Розрахувати</button>
+          <h3>Результат: <span id="result"></span> см²</h3>
+        </section>
+
+        <!-- 2 TWO SIDE & ANGLE  -->
+        <section id="side-angle-section" class="block">
+          <h2>Розрахунок площі трикутника за двома сторонами і кутом між ними</h2>
+          <div class="counter">
+            <div class="input-group">
+              <label for="sideATriangle">Сторона A (см):</label>
+              <input type="number" id="sideATriangle" step="any" placeholder="Введіть сторону A (см)" />
+            </div>
+            <div class="input-group">
+              <label for="sideBTriangle">Сторона B (см):</label>
+              <input type="number" id="sideBTriangle" step="any" placeholder="Введіть сторону B (см)" />
+            </div>
+            <div class="input-group">
+              <label for="angle">Кут між ними (градуси °):</label>
+              <input type="number" id="angle" step="any" placeholder="Введіть міру кута" />
+            </div>
+            <button id="btnCalculateTriangle">Розрахувати площу</button>
+          </div>
+          <h3>Результат: <span id="resultTriangle"></span> см²</h3>
+        </section>
+
+        <!-- 3. BASE E HEIGHT -->
+        <section id="base-height-section" class="block">
+          <h2>Розрахунок площі трикутника за стороною трикутника і висотою</h2>
+          <div class="counter">
+            <div class="input-group">
+              <label for="base">Сторона / Основа (см):</label>
+              <input type="number" id="base" step="any" placeholder="Введіть основу" />
+            </div>
+            <div class="input-group">
+              <label for="height">Висота (см):</label>
+              <input type="number" id="height" step="any" placeholder="Введіть висоту" />
+            </div>
+            <button id="btnCalculateBaseHeight">Розрахувати площу</button>
+          </div>
+          <h3>Результат: <span id="resultBaseHeight"></span> см²</h3>
+        </section>
+      </div>
     </div>
-</body>
+  </body>
 </html>
