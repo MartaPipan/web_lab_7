@@ -3,8 +3,9 @@
  * @param {string} originalText
  * @returns {boolean} 
  */
+
+
 function isWordPalindromeArray(originalText) {
- 
 const cleanText = originalText.toLowerCase().replace(/[^a-zа-яєіїґ]/g, ""); // Очищаємо текст: переводимо в нижній регістр і видаляємо пробіли та розділові знаки
   if (cleanText === "") return false;
   const lettersArray = Array.from(cleanText);      // Перетворюємо очищений текст на масив окремих літер []
@@ -28,9 +29,9 @@ const cleanText = originalText.toLowerCase().replace(/[^a-zа-яєіїґ]/g, "")
  *  стандартна поведінка браузера при кліку на неї — відправити дані на сервер
  *  і повністю оновити (перезавантажити) сторінку.
  */
+
 function checkWordPalindrome(event) {
   if (event) event.preventDefault(); // Зупиняє перезавантаження сторінки при відправці форми
-
   const rawValue = document.getElementById("palindromeInput").value; // Отримуємо значення з поля введення та елемент для виведення результату
   const countResult = document.getElementById("resultPalindrome");
 
