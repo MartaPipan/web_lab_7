@@ -1,0 +1,70 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+.main-header {
+  position: fixed;        
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #666464; 
+  border-bottom: 2px solid #e9ecef; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+  z-index: 2;          
+  padding: 15px 0;
+}
+.nav-menu {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;        
+}
+
+.nav-menu ul {
+  list-style: none;       
+  margin: 0;
+  padding: 0;
+  display: grid; 
+ 
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  gap: 10px; 
+  justify-content: start; 
+}
+
+.nav-menu a {
+  text-decoration: none;  
+  color: #333333;         
+  font-weight: 600;       
+  font-size: 13px; 
+  padding: 10px 12px;
+  border-radius: 6px;     
+  background-color: #f8f9fa;
+  display: block; 
+  text-align: left; 
+  transition: all 0.2s ease; 
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-menu a:hover {
+  color: #007bff;         
+  background-color: #e9ecef; 
+  border-color: #007bff;
+}
+
+
+.container {
+  margin-top: 180px; 
+}
+
+/* Ajustes para Telemóveis */
+@media (max-width: 768px) {
+  .nav-menu ul {
+    grid-template-columns: 1fr; /* Em ecrãs pequenos, fica 1 botão por linha */
+    gap: 8px;
+  }
+  .container {
+    margin-top: 420px; /* Aumenta o espaço porque o menu vai esticar para baixo no telemóvel */
+  }
+}
