@@ -1,8 +1,8 @@
 /**
  * Функція для перевірки, чи є два введені слова анаграмами.
- * Очищає текст від цифр, пробілів та розділових знаків, 
+ * Очищає текст від цифр, пробілів та розділових знаків,
  * порівнює відсортовані літери та виводить результат на сторінку.
- * 
+ *
  * @param {PointerEvent} event - Об'єкт події кліку (необов'язковий, оскільки прив'язаний через addEventListener)
  * @returns {void} Функція нічого не повертає, а лише змінює DOM-елементи
  */
@@ -39,11 +39,9 @@ function checkAnagram(event) {
   //  Порівняння відсортованих рядків та виведення фінального результату
   if (sorted1 === sorted2) {
     resultDiv.className = "anagram-result status-success";
-    resultDiv.style.display = "block";
     resultDiv.innerText = "анаграма";
   } else {
     resultDiv.className = "anagram-result status-error";
-    resultDiv.style.display = "block";
     resultDiv.innerText = "не анаграма";
   }
 

@@ -12,6 +12,8 @@
     <script src="./counter/palindrome-number.js" defer></script>
     <script src="./counter/palindrome-world.js" defer></script>
     <script src="./counter/anagram.js" defer></script>
+    <script src="./counter/getFibonacciByPosition.js" defer></script>
+    <script src="./counter/NumberFibonacci.js" defer></script>
 
     <script src="./counter/resetCurrentBlock.js" defer></script>
     <script src="./counter/navigation.js" defer></script>
@@ -24,19 +26,20 @@
       <div class="menu-category-group">
         <div class="nav-category" id="trigger-geometry">Геометрія</div>
         <ul class="menu-items" id="items-geometry">
-          <li><a href="#heron-section">1. Формула Герона</a></li>
-          <li><a href="#side-angle-section">2. Дві сторони і кут</a></li>
-          <li><a href="#base-height-section">3. Сторона і висота</a></li>
-          <li><a href="#circumradius-section">4. Описане коло (R)</a></li>
+          <li><a href="#heron-section">Формула Герона</a></li>
+          <li><a href="#side-angle-section">Дві сторони і кут</a></li>
+          <li><a href="#base-height-section">Сторона і висота</a></li>
+          <li><a href="#circumradius-section">Описане коло (R)</a></li>
         </ul>
       </div>
       <div class="menu-category-group">
         <div class="nav-category" id="trigger-logic">Логічні завдання</div>
         <ul class="menu-items" id="items-logic">
-          <li><a href="#palindrome-section-number">5. Паліндроми-числа</a></li>
-          <li><a href="#palindrome-section-world">5. Паліндроми-слова</a></li>
-          <li><a href="#anagram-section">6. Анаграми</a></li>
-          <li><a href="#fibonacci-section">7. Фібоначчі</a></li>
+          <li><a href="#palindrome-section-number">Паліндроми-числа</a></li>
+          <li><a href="#palindrome-section-world">Паліндроми-слова</a></li>
+          <li><a href="#anagram-section">Анаграми</a></li>
+          <li><a href="#fibonacci-section-position">Фібоначчі: Позиція  числа </a></li>
+          <li><a href="#fibonacci-section-check">Фібоначчі: Перевірка числа </a></li>
         </ul>
       </div>
     </nav>
@@ -124,13 +127,12 @@
           </div>
 
           <button id="btnCalculateCircumradius">Розрахувати</button>
-          <button class="btn-reset">Новий розрахунок</button>
-
           <h3>Результат: <span id="resultCircumradius"></span></h3>
+          <button class="btn-reset">Новий розрахунок</button>
         </section>
         <!-- 5.1 ПЕРЕВІРКА ЧИСЛА НА ПАЛІНДРОМ -->
         <section id="palindrome-section-number" class="block">
-          <h2>Перевірка числа на паліндром <br>(число-перевертень)</h2>
+          <h2>Перевірка числа на паліндром <br />(число-перевертень)</h2>
 
           <div class="input-group">
             <label for="numberInput">Введіть число:</label>
@@ -142,7 +144,10 @@
         </section>
         <!-- 5.2. ПАЛІНДРОМ -->
         <section id="palindrome-section-world" class="block">
-          <h2>Перевірка рядка на паліндром <br> (слово-перевертень)</h2>
+          <h2>
+            Перевірка рядка на паліндром <br />
+            (слово-перевертень)
+          </h2>
           <div class="input-group">
             <label for="palindromeInput">Введіть слово або фразу:</label>
             <!-- Usamos type="text" porque agora vamos trabalhar com texto -->
@@ -164,8 +169,31 @@
             <input type="text" id="word2" placeholder="Введіть друге слово" />
           </div>
           <button type="button" id="btnCheckAnagram" class="anagram-btn">Перевірити</button>
-          <h3>Результат: <span id="resultAnagram" class="anagram-result"></span></h3>
+          <h3>Результат: <span id="resultAnagram"></span></h3>
           <button class="btn-reset">Новий розрахунок</button>
+        </section>
+        <!-- 7. FIBONACCI BY POSITION -->
+        <section id="fibonacci-section-position" class="block">
+          <h2>Число Фібоначчі за його порядковим номером</h2>
+          <div class="input-group">
+            <label for="fibPosInput">Порядковий номер (n):</label>
+            <input type="number" id="fibPosInput" min="1" placeholder="Введіть номер (наприклад, 7)" />
+          </div>
+          <button id="btnGetFibByPos">Отримати число</button>
+          <h3>Результат: <span id="resultFibPos"></span></h3>
+          <button class="btn-reset" id="resetCurrentBlock">Новий розрахунок</button>
+        </section>
+
+        <!-- 8. FIBONACCI MEMBERSHIP CHECK -->
+        <section id="fibonacci-section-check" class="block">
+          <h2>Перевірка належності числа до послідовності Фібоначчі</h2>
+          <div class="input-group">
+            <label for="fibCheckInput">Число для перевірки:</label>
+            <input type="number" id="fibCheckInput" min="0" placeholder="Введіть число (наприклад, 34)" />
+          </div>
+          <button id="btnCheckFibBelong">Перевірити число</button>
+          <h3>Результат: <span id="resultFibCheck"></span></h3>
+          <button class="btn-reset" id="resetCurrentBlock">Новий розрахунок</button>
         </section>
       </div>
     </div>

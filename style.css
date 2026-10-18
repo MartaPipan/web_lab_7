@@ -11,18 +11,18 @@ body {
 }
 
 .sidebar-nav {
-  position: fixed;    
+  position: fixed;
   top: 0;
   left: 0;
   width: 260px;
   height: 100vh;
-  background-color: #a4c6e8f0;             
+  background-color: #b3d7ef;
 }
 
 .sidebar-nav ul {
   list-style: none;
   padding: 0;
-  margin: 100px 0;
+  margin: 30px 0 100px 0;
 }
 
 .nav-category {
@@ -30,8 +30,12 @@ body {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #1b2021;
+  color: #1a1d1d;
+  text-decoration: underline;
   font-weight: bold;
+}
+.nav-category:first-child {
+  margin-top: 50px;
 }
 
 .sidebar-nav a {
@@ -52,16 +56,16 @@ body {
 }
 
 .container {
-  margin-left: 260px;  
+  margin-left: 260px;
   max-width: 700px;
   padding: 40px 20px;
 }
 
 .container {
-  margin-left: 360px; 
+  margin-left: 360px;
   max-width: 700px;
   padding: 40px 20px;
-  padding-top: 100px; 
+  padding-top: 100px;
 }
 
 .block {
@@ -90,7 +94,7 @@ body {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #2d85bf;
   color: white;
   border: none;
   border-radius: 4px;
@@ -144,24 +148,25 @@ button:hover {
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
+    text-decoration: none;
   }
 
   .menu-items {
-    display: none; 
+    display: none;
     list-style: none;
     padding: 0;
     margin: 5px 0 0 0;
-    position: absolute; 
+    position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     background-color: #a4c6e8;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     z-index: 100000;
   }
   .menu-items.show {
-    display: block !important; 
+    display: block !important;
   }
 
   .sidebar-nav a {
@@ -188,6 +193,6 @@ button:hover {
   .block {
     padding: 20px;
     margin-bottom: 25px;
-    scroll-margin-top: 80px; 
+    scroll-margin-top: 80px;
   }
 }
