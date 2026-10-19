@@ -47,9 +47,5 @@ function checkWordPalindrome(event) {
   countResult.innerText = `Ні, text "${rawValue}" не є паліндромом.`;
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const btnWord = document.getElementById("btnCheckPalindrome");
-  if (btnWord) {
-    btnWord.addEventListener("click", checkWordPalindrome);
-  }
-});
+
+document.getElementById("btnCheckPalindrome").addEventListener("click", checkWordPalindrome);

@@ -44,10 +44,33 @@ document.getElementById("btnCheckAnagram").addEventListener("click", checkAnagra
 
 Браузер читає HTML-код сторінки зверху вниз, рядок за рядком:
 1. **Якщо скрипт стоїть вгорі (у тегу `<head>`):** Браузер доходить до рядка `document.getElementById`, намагається знайти кнопку, але її ще не існує в пам'яті (бо код самої кнопки розташований нижче в HTML). Функція поверне `null`, і ви отримаєте помилку: `Cannot read properties of null (reading 'addEventListener')`.
-2. **Якщо скрипт стоїть у самому кінці (перед `</body>`):** Браузер спочатку успішно створює кнопку на екрані, а вже потім доходить до JavaScript-коду. Кнопка вже існує, тому JavaScript легко знаходить її та вішає «слухача подій».
-
+2. **Якщо скрипт стоїть у самому кінці (перед `</body>`):** Браузер спочатку успішно створює кнопку на екрані, а вже потім доходить до JavaScript-коду. Кнопка вже існує, тому JavaScript легко знаходить її та вішає «слухача подій»
 Саме тому розміщення тегу `<script>` наприкінці HTML-файлу дозволяє уникнути написання додаткових обгорток на кшталт `window.addEventListener("DOMContentLoaded", ...)` і робить код простішим.
 
+Exemple1:
+areaSideHight.js
+Що таке DOMContentLoaded та як він працює?
+
+DOMContentLoaded — це спеціальна подія, яку браузер створює (генерує) у той момент, коли він повністю прочитав HTML-код сторінки та побудував її структуру (DOM). При цьому браузер не чекає на завантаження важких картинок, стилів чи інших зовнішніх ресурсів.
+1. Браузер завантажує ваш скрипт у тегу <head>.
+2. Він бачить функції areaSideHight та calculateAreaSideHight, запам'ятовує їх, але не запускає.
+3. Браузер доходить до рядка window.addEventListener("DOMContentLoaded", ...). Він розуміє: "Добре, я зачекаю, поки весь HTML з'явиться в пам'яті".
+4. Як тільки HTML готовий, браузер виконує код всередині: шукає кнопку btnCalculateBaseHeight та успішно прив'язує до неї подію кліку (click).
+5. Якби ми не використали DOMContentLoaded (і не мали б атрибута defer в HTML), JavaScript спробував би знайти кнопку миттєво, повернув би null і код зламався б із помилкою.
+
+Exemple2:
+areaThreeCircumradius
+
+Ativate buttons in HTML
+1.1. DOMContentLoaded:
+window.addEventListener('DOMContentLoaded', () => {const btn = document.getElementById('btnCalculateCircumradius');
+if (btn) { 
+    btn.addEventListener('click', calculateCircumradius);
+    }});
+
+2.2. defer:
+// Прив'язуємо подію кліку безпосередньо до кнопки. Працює без DOMContentLoaded, якщо скрипт підключено в самому кінці HTML-файлу.
+document.getElementById("btnCalculateCircumradius").addEventListener("click", calculateCircumradius);
 ---
 
 ## Логіка перевірки паліндромів (Two Pointers)

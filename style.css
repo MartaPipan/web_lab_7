@@ -91,6 +91,11 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.input-group input:focus {
+  outline: none;                 /*  Видаляє стандартний "чорний контур" браузера */
+  border-color: #2d85bf;       /*  Задає синій колір для рамки під час фокусу */
+}
+
 button {
   width: 100%;
   padding: 10px;

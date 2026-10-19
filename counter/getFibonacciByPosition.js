@@ -1,7 +1,7 @@
 /**
- * Обчислює число Фібоначчі за його порядковим номером (1 -> 1, 2 -> 1, 3 -> 2...)
- * @param {number} n - Порядковий номер
- * @returns {BigInt} Число Фібоначчі
+ * Обчислює число Фібоначчі за його порядковим номером (1 -> 1, 2 -> 1, 3 -> 2...).
+ * @param {number} n - Порядковий номер у послідовності
+ * @returns {bigint} Число Фібоначчі (значення BigInt для високої точності)
  */
 
 function calculateFibonacciPosition(n) {
@@ -15,6 +15,14 @@ function calculateFibonacciPosition(n) {
   }
   return b;
 }
+
+
+/**
+ * Головний обробник події кліку для отримання числа Фібоначчі за позицією.
+ * Зчитує номер із поля введення, валідує його та виводить результат у DOM.
+ * @param {PointerEvent} [event] - Об'єкт події кліку --- function handleFibonacciPosition(event)
+ * @returns {void} Функція нічого не повертає, лише змінює текст на сторінці
+ */
 
 function handleFibonacciPosition() {
   const inputVal = document.getElementById("fibPosInput").value;
@@ -36,8 +44,5 @@ function handleFibonacciPosition() {
   countResult.innerText = `${n}-е число Фібоначчі: ${fibValue.toString()}`;
   console.log(`Позиція: ${n}. Число: ${fibValue.toString()}`);
 }
-
-//  window.addEventListener('DOMContentLoaded', () => {const btn = document.getElementById("btnGetFibByPos");
-//  if (btn) {btn.addEventListener("click", handleFibonacciPosition);}});
 
 document.getElementById("btnGetFibByPos").addEventListener("click", handleFibonacciPosition);

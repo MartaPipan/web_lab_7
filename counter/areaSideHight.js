@@ -21,13 +21,12 @@ function calculateAreaSideHight() {
   console.log(`Triangle area using base and altitude (base ${base}, height ${height}): ${area}`);
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const button = document.getElementById("btnCalculateBaseHeight");
-  if (button) {
-    button.addEventListener("click", calculateAreaSideHight);
-  }
-});
+//window.addEventListener("DOMContentLoaded", () => {const button = document.getElementById("btnCalculateBaseHeight");
+// if (button) {button.addEventListener("click", calculateAreaSideHight);}});
 //   (DOMContentLoaded)
 //    Порядок дій: Спочатку браузер бачить функції (Частини 1 і 2), але не запускає їх.
 //    Потім він доходить до Частини 3,
 //    чекає завантаження сторінки й «вішає» на кнопку команду: "Коли тебе натиснуть — запусти Частину 2".
+
+// Прив'язуємо подію кліку безпосередньо до кнопки. Працює без DOMContentLoaded, якщо скрипт підключено в самому кінці HTML-файлу.
+document.getElementById("btnCalculateBaseHeight").addEventListener("click", calculateAreaSideHight);

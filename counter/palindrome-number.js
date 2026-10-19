@@ -53,9 +53,5 @@ function checkNumberPalindrome(event) {
   countResult.innerText = `Ні, число ${rawValue} не є паліндромом.`;
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const btnNumber = document.getElementById("btnCheckNumberPalindrome");
-  if (btnNumber) {
-    btnNumber.addEventListener("click", checkNumberPalindrome);
-  }
-});
+
+document.getElementById("btnCheckNumberPalindrome").addEventListener("click", checkNumberPalindrome);

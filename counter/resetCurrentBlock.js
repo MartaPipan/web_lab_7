@@ -1,29 +1,30 @@
-// FUNÇÃO GENÉRICA: Limpa apenas o bloco onde o botão foi clicado
-function resetCurrentBlock(event) {
-  // 1. Identifica o botão que foi clicado
+/**
+ * Універсальна функція для очищення полів форми.
+ * Знаходить найближчу секцію калькулятора, у якій було натиснуто кнопку «Очистити»,
+ * та видаляє значення з усіх її інпутів і текстового спану результату.
+ * @param {PointerEvent} event - Об'єкт події кліку, що містить інформацію про натиснуту кнопку
+ * @returns {void} Функція нічого не повертає, лише модифікує текстові значення в DOM
+ */
+function resetCurrentBlock(event) {                       //Ідентифікуємо кнопку, яку було натиснуто
   const clickedButton = event.target;
-
-  // 2. Encontra a <section class="block"> onde este botão está guardado
-  const currentBlock = clickedButton.closest(".block");
+  const currentBlock = clickedButton.closest(".block");   //Знаходимо <section class="block">, у якій розташована ця кнопка
 
   if (currentBlock) {
-    // 3. Procura e limpa apenas os inputs que estão DENTRO deste bloco
-    const inputs = currentBlock.querySelectorAll("input");
+    const inputs = currentBlock.querySelectorAll("input");    //Шукаємо та очищаємо лише ті інпути, які містяться ВСЕРЕДИНІ цього блоку
     inputs.forEach((input) => (input.value = ""));
 
-    // 4. Procura e limpa apenas o <span> de resultado que está DENTRO deste bloco
-    const resultSpan = currentBlock.querySelector("h3 span");
+    const resultSpan = currentBlock.querySelector("h3 span");    // Шукаємо та очищаємо лише той <span>, який міститься ВСЕРЕДИНІ цього блоку
     if (resultSpan) {
       resultSpan.innerText = "";
     }
   }
 }
 
-// ATIVAÇÃO DOS BOTÕES: Procura todos os botões de reset e ativa-os
-window.addEventListener("DOMContentLoaded", () => {
-  const resetButtons = document.querySelectorAll(".btn-reset");
 
-  resetButtons.forEach((button) => {
-    button.addEventListener("click", resetCurrentBlock);
-  });
+const resetButtons = document.querySelectorAll(".btn-reset");
+
+resetButtons.forEach((button) => {
+  button.addEventListener("click", resetCurrentBlock);
 });
+
+

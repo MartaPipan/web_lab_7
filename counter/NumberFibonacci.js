@@ -1,12 +1,37 @@
+/**
+ * Перевіряє, чи є число повним квадратом (квадратом цілого числа). 
+ * @param {number} x - Число для перевірки
+ * @returns {boolean} Повертає true, якщо число є повним квадратом, інакше false
+ */
+
 function isPerfectSquare(x) {
   let s = Math.round(Math.sqrt(x));
   return s * s === x;
 }
 
+
+
+
+/**
+ * Перевіряє, чи належить число послідовності Фібоначчі за математичною формулою (5n² ± 4).
+ * @param {number} n - Число для перевірки на належність до послідовності
+ * @returns {boolean} Повертає true, якщо число є числом Фібоначчі, інакше false
+ */
+
 function isFibonacciNumber(n) {
   if (n < 0) return false;
   return isPerfectSquare(5 * n * n + 4) || isPerfectSquare(5 * n * n - 4);
 }
+
+
+
+
+/**
+ * Головний обробник події кліку для перевірки числа Фібоначчі.
+ * Зчитує значення з поля введення, валідує його та виводить текстовий результат у DOM.
+ * @param {PointerEvent} [event] - Об'єкт події кліку (необов'язковий)
+ * @returns {void} Функція нічого не повертає, лише модифікує вміст сторінки
+ */
 
 function handleFibonacciCheck() {
   const inputVal = document.getElementById("fibCheckInput").value;
@@ -31,9 +56,5 @@ function handleFibonacciCheck() {
   }
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("btnCheckFibBelong");
-  if (btn) {
-    btn.addEventListener("click", handleFibonacciCheck);
-  }
-});
+
+document.getElementById("btnCheckFibBelong").addEventListener("click", handleFibonacciCheck);

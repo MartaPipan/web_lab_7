@@ -1,7 +1,25 @@
+/**
+ * Обчислює площу трикутника за формулою Герона (за трьома сторонами).
+ * @param {number} a - Довжина першої сторони трикутника
+ * @param {number} b - Довжина другої сторони трикутника
+ * @param {number} c - Довжина третьої сторони трикутника
+ * @returns {number} Площа трикутника
+ */
+
 function areaHeron(a, b, c) {
   let p = (a + b + c) / 2;
   return Math.sqrt(p * (p - a) * (p - b) * (p - c));
 }
+
+
+
+
+/**
+ * Головний обробник події кліку для обчислення площі за трьома сторонами.
+ * Зчитує дані з інпутів, перевіряє їх на коректність та виводить результат.
+ * @param {PointerEvent} [event] - Об'єкт події кліку (необов'язковий)
+ * @returns {void} Функція нічого не повертає, лише змінює текст у DOM
+ */
 
 function calculateInWindow() {
   let a = Number(document.getElementById("sideA").value);
@@ -27,5 +45,4 @@ function calculateInWindow() {
   }
 }
 
-// Прив'язуємо подію напряму, без DOMContentLoaded
 document.getElementById("btnCalculate").addEventListener("click", calculateInWindow);
