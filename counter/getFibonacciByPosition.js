@@ -18,6 +18,22 @@ function calculateFibonacciPosition(n) {
 
 
 /**
+function calculateFibonacciPosition(n) {
+  const target = BigInt(n);
+  if (target <= BigInt(0)) return BigInt(0);
+  if (target === BigInt(1) || target === BigInt(2)) return BigInt(1);
+  let a = BigInt(1);
+  let b = BigInt(1);
+  for (let i = BigInt(3); i <= target; i += BigInt(1)) {
+    let next = a + b;
+    a = b;
+    b = next;
+  }
+  return b;
+}
+ */
+
+/**
  * Головний обробник події кліку для отримання числа Фібоначчі за позицією.
  * Зчитує номер із поля введення, валідує його та виводить результат у DOM.
  * @param {PointerEvent} [event] - Об'єкт події кліку --- function handleFibonacciPosition(event)
